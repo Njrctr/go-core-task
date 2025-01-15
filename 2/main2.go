@@ -33,8 +33,8 @@ func sliceExample(old []int) []int {
 	return newSlice
 }
 
-func addElements(old []int, newElement int) []int {
-	return append(old, newElement)
+func addElements(slice []int, newElement int) []int {
+	return append(slice, newElement)
 }
 
 func copySlice(old []int) []int {
