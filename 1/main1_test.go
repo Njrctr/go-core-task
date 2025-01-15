@@ -10,12 +10,12 @@ func TestStringFromAll(t *testing.T) {
 	}{
 		{
 			name:     "OK1",
-			input:    []interface{}{42, 052, 0x2A, 3.14, "Golang", true, 1 + 2i},
+			input:    []interface{}{42, 052, 0x2A, 3.14, "Golang", true, complex64(1 + 2i)},
 			expected: "4242423.14Golangtrue(1+2i)",
 		},
 		{
 			name:     "OK2",
-			input:    []interface{}{true, 1 + 2i, 3.14, "Golang", 42, 052, 0x2A},
+			input:    []interface{}{true, complex64(1 + 2i), 3.14, "Golang", 42, 052, 0x2A},
 			expected: "true(1+2i)3.14Golang424242",
 		},
 	}
