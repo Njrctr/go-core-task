@@ -64,13 +64,13 @@ func TestAllTypesToString(t *testing.T) {
 	}{
 		{
 			name:     "OK1",
-			input:    []interface{}{42, 052, 0x2A, 3.14, "Golang", true, 1 + 2i},
+			input:    []interface{}{42, 052, 0x2A, 3.14, "Golang", true, complex64(1 + 2i)},
 			expected: "int\nint\nint\nfloat64\nstring\nbool\ncomplex64",
 		},
 		{
 			name:     "OK2",
-			input:    []interface{}{true, 1 + 2i, 3.14, "Golang", 42, 052, 0x2A},
-			expected: "bool\ncomplex64\nfloat64\nstring\nint\nint\nint", // !Возвращается complex128???? Почему
+			input:    []interface{}{true, complex64(1 + 2i), 3.14, "Golang", 42, 052, 0x2A},
+			expected: "bool\ncomplex64\nfloat64\nstring\nint\nint\nint",
 		},
 	}
 	for _, testCase := range testTable {

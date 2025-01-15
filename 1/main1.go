@@ -16,7 +16,6 @@ func main() {
 	var str string = "Golang"
 	var boolean bool = true
 	var complexNum complex64 = 1 + 2i
-	fmt.Printf("%T\n", complexNum)
 
 	fmt.Println(allTypesToString(intDecimal, intOctal, intHexadecimal, floatNum, str, boolean, complexNum))
 	combinedString := stringFromAll(intDecimal, intOctal, intHexadecimal, floatNum, str, boolean, complexNum)
@@ -30,6 +29,7 @@ func allTypesToString(args ...interface{}) string {
 	var resultStr string
 
 	for i, arg := range args {
+
 		resultStr += fmt.Sprintf("%T", arg)
 		if i != len(args)-1 {
 			resultStr += "\n"
